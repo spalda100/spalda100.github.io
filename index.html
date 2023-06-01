@@ -10,13 +10,14 @@
 </head>
 <body>
   <p>OSTEST10000</p>
-  <button onclick="openNewTab()">Open New Tab</button>
+  <button onclick="openSameTab()">Open Same Tab</button>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a lacus non quam euismod semper. Mauris vulputate auctor mauris, sit amet ullamcorper lectus ullamcorper ut. Phasellus fermentum metus non augue aliquet, id ullamcorper risus fringilla. Aliquam commodo nulla nibh, vel efficitur nulla feugiat a. Sed quis est tincidunt, volutpat risus ut, semper sapien. Duis in metus sit amet urna dapibus rutrum. Sed tempus metus ut nisi luctus, non venenatis dolor congue. Nulla facilisi. Curabitur et tellus feugiat, lacinia dolor vitae, bibendum est. Praesent interdum tellus ac nisi ultrices, vitae euismod nulla semper. Maecenas ut ex lobortis, consectetur odio non, euismod metus. Donec pretium vulputate nibh, id tristique dolor dignissim ut.</p>
 
   <script type="text/javascript">
-    function openNewTab() {
+    function openSameTab() {
       var baseUrl = window.location.href.split('/companies')[0]; // Get the base URL without '/companies'
       var newTabUrl = baseUrl + '/your-new-tab-url'; // Replace 'your-new-tab-url' with the desired URL for the new tab
-      window.open(newTabUrl, '_blank');
+      window.location.href = newTabUrl; // Open the URL in the same tab
     }
   </script>
 </body>
