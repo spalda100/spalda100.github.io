@@ -7,23 +7,24 @@
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24307484.js"></script>
 <!-- End of HubSpot Embed Code -->
 <script type='text/javascript'>
-!function(e,s){
-  // Get the value of the hubspotutk cookie
-var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1]
+// Add this to header
+function onload() {
+  var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1];
   var t=e._opensend||[];
-  t.push(['set','fixed','FixedText']);
-  t.push(['set','dynamic',hubspotutk]); // Pass the hubspotutk value to the 'hubspotutk' parameter
-  e._opensend=t;
-
-  // Rest of the code
-  var o=s.createElement('script');
-  o.src='https://s.opensend.com/os.min.js';
-  o.async=!0;
-  o.setAttribute('ostyp','6311ae17');
-  o.setAttribute('osid','6BC91377');
-  (t=s.getElementsByTagName('script')[0]).parentNode.insertBefore(o,t);
+  t.push(['set','dynamic',hubspotutk]);
+}
+</script>
+<script type='text/javascript'>
+!function(e,s){
+  var t=e._opensend||[];
+  t.push(['set','fixed','FixedText']),
+  e._opensend=t,(o=s.createElement('script')).src='https://s.opensend.com/os.min.js',o.async=!0,o.setAttribute('ostyp','6311ae17'),o.setAttribute('osid','6BC91377'),(t=s.getElementsByTagName('script')[0]).parentNode.insertBefore(o,t)
 }(window,document);
 </script>
+
+
+// Modify all hubspot to add onload event
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="//js.hs-scripts.com/24307484.js" onload="onload"></script>
 
 </head>
 <body>
