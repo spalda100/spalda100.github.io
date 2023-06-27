@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>OS445755444</title>
+      <title>OS44555444</title>
       <meta name="referrer" content="no-referrer-when-downgrade">
       <!-- Start of HubSpot Embed Code -->
-      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24307484.js" onload="onload()"></script>
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24307484.js" onload="getCookie()"></script>
       <!-- End of HubSpot Embed Code -->
       <script type='text/javascript'>
          // Add this to header
-         function onload() {
-           var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1];
-           var t=e._opensend||[];
-           t.push(['set','dynamic',hubspotutk]);
+         function getCookie() {
+           var hubspotutk_cookie = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0];
+		   if (hubspotutk_cookie) {
+		   	var hubspotutk = hubspotutk_cookie.split("=")[1];
+		   	var t=window._opensend||[];
+            t.push(['set','dynamic',hubspotutk]);
+		  } else {
+		    setTimeout(getCookie, 1000);
+		  }
          }
       </script>
       <script type='text/javascript'>
