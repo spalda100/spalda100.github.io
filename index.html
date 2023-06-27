@@ -9,8 +9,7 @@
 <script type='text/javascript'>
 !function(e,s){
   // Get the value of the hubspotutk cookie
-  var hubspotutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1");
-
+var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1]
   var t=e._opensend||[];
   t.push(['set','fixed','FixedText']);
   t.push(['set','dynamic',hubspotutk]); // Pass the hubspotutk value to the 'hubspotutk' parameter
