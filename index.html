@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>OS44555444</title>
-  <meta name="referrer" content="no-referrer-when-downgrade">
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24307484.js"></script>
-<!-- End of HubSpot Embed Code -->
-<script type='text/javascript'>
-// Add this to header
-function onload() {
-  var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1];
-  var t=e._opensend||[];
-  t.push(['set','dynamic',hubspotutk]);
-}
-</script>
-<script type='text/javascript'>
-!function(e,s){
-  var t=e._opensend||[];
-  t.push(['set','fixed','FixedText']),
-  e._opensend=t,(o=s.createElement('script')).src='https://s.opensend.com/os.min.js',o.async=!0,o.setAttribute('ostyp','6311ae17'),o.setAttribute('osid','6BC91377'),(t=s.getElementsByTagName('script')[0]).parentNode.insertBefore(o,t)
-}(window,document);
-</script>
-
-
-// Modify all hubspot to add onload event
-<script type="text/javascript" id="hs-script-loader" async="" defer="" src="//js.hs-scripts.com/24307484.js" onload="onload"></script>
-
-</head>
-<body>
-  <p>OSTEST10000</p>
-  <button onclick="openLoremPage()">Open Lorem Page</button>
-
-  <script type="text/javascript">
-    function openLoremPage() {
-      var baseUrl = window.location.href.split('/companies')[0]; // Get the base URL without '/companies'
-      var newTabUrl = baseUrl + '/lorem-page.html'; // Replace 'lorem-page.html' with the URL of the page containing the Lorem Ipsum content
-      window.location.href = newTabUrl; // Open the URL in the same tab
-    }
-  </script>
-</body>
+   <head>
+      <title>OS44555444</title>
+      <meta name="referrer" content="no-referrer-when-downgrade">
+      <!-- Start of HubSpot Embed Code -->
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24307484.js" onload="onload()"></script>
+      <!-- End of HubSpot Embed Code -->
+      <script type='text/javascript'>
+         // Add this to header
+         function onload() {
+           var hubspotutk = document.cookie.split(";").map(_cookie => _cookie.trim()).filter(_cookie => {return _cookie.substring(0, 11) === 'hubspotutk=';})[0].split("=")[1];
+           var t=e._opensend||[];
+           t.push(['set','dynamic',hubspotutk]);
+         }
+      </script>
+      <script type='text/javascript'>
+         !function(e,s){
+           var t=e._opensend||[];
+           t.push(['set','fixed','FixedText']),
+           e._opensend=t,(o=s.createElement('script')).src='https://s.opensend.com/os.min.js',o.async=!0,o.setAttribute('ostyp','6311ae17'),o.setAttribute('osid','6BC91377'),(t=s.getElementsByTagName('script')[0]).parentNode.insertBefore(o,t)
+         }(window,document);
+      </script>
+   </head>
+   <body>
+      <p>OSTEST10000</p>
+      <button onclick="openLoremPage()">Open Lorem Page</button>
+      <script type="text/javascript">
+         function openLoremPage() {
+           var baseUrl = window.location.href.split('/companies')[0]; // Get the base URL without '/companies'
+           var newTabUrl = baseUrl + '/lorem-page.html'; // Replace 'lorem-page.html' with the URL of the page containing the Lorem Ipsum content
+           window.location.href = newTabUrl; // Open the URL in the same tab
+         }
+      </script>
+   </body>
 </html>
