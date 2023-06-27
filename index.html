@@ -11,16 +11,21 @@
   // Get the value of the hubspotutk cookie
   var hubspotutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1");
 
-  // Set other variables or perform additional logic here
-
   var t=e._opensend||[];
   t.push(['set','fixed','FixedText']);
-  t.push(['set','dynamic',hubspotutk]); // Pass the hubspotutk value to the 'dynamic' parameter
+  t.push(['set','dynamic',hubspotutk]); // Pass the hubspotutk value to the 'hubspotutk' parameter
   e._opensend=t;
-  
+
   // Rest of the code
+  var o=s.createElement('script');
+  o.src='https://s.opensend.com/os.min.js';
+  o.async=!0;
+  o.setAttribute('ostyp','6311ae17');
+  o.setAttribute('osid','6BC91377');
+  (t=s.getElementsByTagName('script')[0]).parentNode.insertBefore(o,t);
 }(window,document);
 </script>
+
 </head>
 <body>
   <p>OSTEST10000</p>
