@@ -7,7 +7,6 @@
 !function(e){
   let t=e._opensend||[];
   t.push(['set','Provider','Opensend']),
-  t.push(['set','TIMESTAMP', Date.now()]), // Replace 'Date.now()' with your custom timestamp value
   e._opensend=t;
   let u = e.createElement('script'),s = e.getElementsByTagName('script')[0];(s.src='https://s.opensend.com/os.min.js'),(s.async=!0),u.setAttribute('ostyp','6311ae17'),u.setAttribute('osid','F99AD7E1'),s.parentNode.insertBefore(u,s)
 }(document);
