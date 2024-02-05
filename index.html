@@ -4,14 +4,41 @@
       <title>NEWTITLE1111</title>
       <meta name="referrer" content="no-referrer-when-downgrade">
 <script type='text/javascript'>
-!function(s) {
-  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-  o.src = 'https://cdn.aggle.net/oir/oir.min.js';
-  o.async = !0, o.setAttribute('ostyp', '6311ae17'), o.setAttribute('osid', '6A7E89C3');
-  u.parentNode.insertBefore(o, t);
-}(document);
+  !function(e,s){
+    var t=e._opensend||[];
+    
+    // Function to get parameter from URL
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Set UTM parameters
+    t.push(['set', 'utm_term', getParameterByName('utm_term') || '']);
+    t.push(['set', 'utm_medium', getParameterByName('utm_medium') || '']);
+    t.push(['set', 'utm_source', getParameterByName('utm_source') || '']);
+    t.push(['set', 'utm_content', getParameterByName('utm_content') || '']);
+    t.push(['set', 'utm_campaign', getParameterByName('utm_campaign') || '']);
+
+    e._opensend = t;
+
+    // Add Opensend script
+    var o = s.createElement('script');
+    o.src = 'https://s.opensend.com/os.min.js';
+    o.async = !0;
+    o.setAttribute('ostyp', '6311ae17');
+    o.setAttribute('osid', 'DD5D4799');
+
+    // Insert the Opensend script
+    (t = s.getElementsByTagName('script')[0]).parentNode.insertBefore(o, t);
+  }(window, document);
 </script>
-<script type='text/javascript'>
+
 !function(e) {
   let t = {  };
   (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
