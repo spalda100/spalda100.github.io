@@ -14,12 +14,17 @@
          }(document);
       </script>
 
-      <!-- Function to track view_item event and redirect to product page -->
+      <!-- Function to track page viewed event -->
       <script type='text/javascript'>
          function trackAndViewProduct(productId, productUrl) {
-            // Track the view_item event
+            // Track the page viewed event
+            let data = {
+               page_url: window.location.href,
+               page_title: document.title
+            };
+
             window._oirtrk = window._oirtrk || [];
-            window._oirtrk.push(['track', 'view_item', { productId: productId }]);
+            window._oirtrk.push(['track', 'page-viewed', data]);
             
             // Redirect to the product page
             window.location.href = productUrl;
