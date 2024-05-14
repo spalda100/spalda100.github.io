@@ -4,23 +4,40 @@
     <title>Main Page</title>
     <meta name="referrer" content="no-referrer-when-downgrade">
 
-<script type='text/javascript'>
-!function(s) {
-  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-  o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
-  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '57C99437');
-  u.parentNode.insertBefore(o, u);
-}(document);
-</script>
-<script type='text/javascript'>
-!function(e) {
-  let t = { 
-  HERB: 'PLACEHOLDER',
-  Provider: 'Opensend'
- };
-  (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
-}(window);
-</script>
+    <!-- Include Aggle tracking script -->
+    <script type='text/javascript'>
+        !function(s) {
+            let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+            o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+            o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '15F9264C');
+            u.parentNode.insertBefore(o, u);
+        }(document);
+    </script>
+
+    <!-- Function to track page viewed event -->
+    <script type='text/javascript'>
+        function trackAndViewProduct(productId, productUrl) {
+            // Track the page viewed event
+            let data = {
+                page_url: window.location.href,
+                page_title: document.title
+            };
+
+            window._oirtrk = window._oirtrk || [];
+            window._oirtrk.push(['track', 'page-viewed', data]);
+
+            // Redirect to the product page
+            window.location.href = productUrl;
+        }
+    </script>
+
+    <!-- Track on-site event -->
+    <script type='text/javascript'>
+        !function(e) {
+            let t = {  };
+            (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+        }(window);
+    </script>
 </head>
 <body>
     <!-- Your body content goes here -->
