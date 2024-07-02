@@ -4,88 +4,60 @@
     <title>Main Page</title>
     <meta name="referrer" content="no-referrer-when-downgrade">
 
-
     <script type='text/javascript'>
-!function(s) {
-  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-  o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
-  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '65088EDE');
-  u.parentNode.insertBefore(o, u);
-}(document);
-</script>
-<script type='text/javascript'>
-!function(e) {
-  let t = {  };
-  (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
-}(window);
-</script>
-
-
-<script>
-// Define event listener
-const onKlaviyoSyncPerformLookup = (event) => {
-  console.log("onKlaviyoSync event data:", event.detail);
-
-  const kExchangeId = event.detail?.$exchange_id;
-  if (kExchangeId) {
-    console.log(event.detail?.$exchange_id);
-    // Add your custom logic here
-  }
-};
-
-// Set listener
-window._oirtrk = (window._oirtrk || []);
-const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
-addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
-</script>
+    !function(s) {
+      let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+      o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+      o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '65088EDE');
+      u.parentNode.insertBefore(o, u);
+    }(document);
+    </script>
     
-<script>
-// Define event listener
-const onKlaviyoSyncPerformLookup = (event) => {
-  console.log("onKlaviyoSync event data:", event.detail);
+    <script type='text/javascript'>
+    !function(e) {
+      let t = {  };
+      (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+    }(window);
+    </script>
 
-  const kExchangeId = event.detail?.$exchange_id;
-  if (kExchangeId) {
-    console.log(event.detail?.$exchange_id);
-    // Add your custom logic here
-  }
-};
+    <script>
+    // Define event listener
+    const onKlaviyoSyncPerformLookup = (event) => {
+      console.log("onKlaviyoSync event data:", event.detail);
 
-// Set listener
-window._oirtrk = (window._oirtrk || []);
-const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
-addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
-</script>
+      const kExchangeId = event.detail?.$exchange_id;
+      if (kExchangeId) {
+        console.log(event.detail?.$exchange_id);
+        // Add your custom logic here
+      }
+    };
 
-    // Replace "PUBLIC_API_KEY" with your real API key.
-<script
-  async type="text/javascript"
-  src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=XuKF2f"
-></script>
+    // Set listener
+    window._oirtrk = (window._oirtrk || []);
+    const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
+    addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
+    </script>
 
-<script>
-  klaviyo.push(['identify', {
-    // Change the line below to dynamically print the user's email.
-    'email' : '{{ email }}'
-  }]);
-</script>
+    <script
+      async type="text/javascript"
+      src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=XuKF2f"
+    ></script>
 
-    
+    <script>
+      klaviyo.push(['identify', {
+        // Change the line below to dynamically print the user's email.
+        'email' : '{{ email }}'
+      }]);
+    </script>
 
-
-    
-    
-    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16588078378">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16588078378');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16588078378"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16588078378');
+    </script>
 </head>
 <body>
     <!-- Your body content goes here -->
