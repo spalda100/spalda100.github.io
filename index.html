@@ -21,19 +21,32 @@
 </script>
 
 <script>
-// Define event listener for onIdentify
 const onIdentifyPerformLookup = (event) => {
   console.log("onIdentify event data:", event.detail);
 
   if (event.detail?.idToken) {
-    console.log("ID Token:", event.detail.idToken);
-    // Add your custom logic here based on idToken
+    console.log('The token is here: ' + event.detail?.idToken);
+    //if (event.detail?.idToken != 'anonymous') {
+      //fetch("https://api.opensend.com/identity/contact", {
+      //  headers: {
+      //    "Content-Type": "application/json",
+      //    'x-api-key': '3obvEkoY487Wu8qjZwkE8aQYxgeulLvIaF7SqoWA',
+      //  },
+      //  method: "POST",
+      //  body: {"public_id": "65088EDE", "token": "event.detail?.idToken", "data": "email"}
+      //})
+      //.then(response => response.json())
+      //.then(body => console.log(body))
+    //}
   }
+  var t = {idToken: event.detail?.idToken};
+  window._oirtrk = window._oirtrk || [];
+  window._oirtrk.push(['track', 'on-site', t]);
 };
 
-// Set listener for onIdentify event
+// Set listener
 window._oirtrk = (window._oirtrk || []);
-const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])};
+const addEventListenerToOir = !Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
 addEventListenerToOir('onIdentify', onIdentifyPerformLookup);
 </script>
 
