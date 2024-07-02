@@ -25,10 +25,10 @@ const onIdentifyPerformLookup = (event) => {
     fetch("https://api.opensend.com/identity/contact", {
       headers: {
         "Content-Type": "application/json",
-        'x-api-key': 'API-key',
+        'x-api-key': '3obvEkoY487Wu8qjZwkE8aQYxgeulLvIaF7SqoWA',
       },
       method: "POST",
-      body: JSON.stringify({"public_id": "6002F413", "token": event.detail?.idToken, "data": "email"})
+      body: JSON.stringify({"public_id": "65088EDE", "token": event.detail?.idToken, "data": "email"})
     })
     .then(response => response.json())
     .then(body => console.log(body))
