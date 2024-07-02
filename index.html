@@ -8,71 +8,18 @@
 !function(s) {
   let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
   o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
-  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '65088EDE');
+  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', 'CE9E82B2');
   u.parentNode.insertBefore(o, u);
 }(document);
 </script>
-
-<script>
-// Define event listener for onIdentify
-const onIdentifyPerformLookup = (event) => {
-  console.log("onIdentify event data:", event.detail);
-
-  if (event.detail?.idToken) {
-    console.log('The token is here: ' + event.detail?.idToken);
-    // Uncomment and modify this block to perform actions based on idToken
-    /*
-    fetch("https://api.opensend.com/identity/contact", {
-      headers: {
-        "Content-Type": "application/json",
-        'x-api-key': '3obvEkoY487Wu8qjZwkE8aQYxgeulLvIaF7SqoWA',
-      },
-      method: "POST",
-      body: JSON.stringify({"public_id": "65088EDE", "token": event.detail?.idToken, "data": "email"})
-    })
-    .then(response => response.json())
-    .then(body => console.log(body))
-    .catch(error => console.error('Error:', error));
-    */
-  }
-
-  // Track the event with idToken
-  var t = { idToken: event.detail?.idToken };
-  window._oirtrk = window._oirtrk || [];
-  window._oirtrk.push(['track', 'on-site', t]);
-};
-
-// Define event listener for onKlaviyoSync
-const onKlaviyoSyncPerformLookup = (event) => {
-  console.log("onKlaviyoSync event data:", event.detail);
-
-  const kExchangeId = event.detail?.$exchange_id;
-  if (kExchangeId) {
-    console.log(event.detail?.$exchange_id);
-    // Add your custom logic here based on kExchangeId
-  }
-};
-
-// Set listeners
-window._oirtrk = window._oirtrk || [];
-const addEventListenerToOir = !Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
-addEventListenerToOir('onIdentify', onIdentifyPerformLookup);
-addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
+<script type='text/javascript'>
+!function(e) {
+  let t = { 
+  abc: 'def'
+ };
+  (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+}(window);
 </script>
-
-
-
-    <script
-      async type="text/javascript"
-      src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=XuKF2f"
-    ></script>
-
-    <script>
-      klaviyo.push(['identify', {
-        // Change the line below to dynamically print the user's email.
-        'email' : '{{ email }}'
-      }]);
-    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16588078378"></script>
