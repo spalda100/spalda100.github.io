@@ -19,6 +19,25 @@
   (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
 }(window);
 </script>
+
+
+<script>
+// Define event listener
+const onKlaviyoSyncPerformLookup = (event) => {
+  console.log("onKlaviyoSync event data:", event.detail);
+
+  const kExchangeId = event.detail?.$exchange_id;
+  if (kExchangeId) {
+    console.log(event.detail?.$exchange_id);
+    // Add your custom logic here
+  }
+};
+
+// Set listener
+window._oirtrk = (window._oirtrk || []);
+const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
+addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
+</script>
     
 <script>
 // Define event listener
