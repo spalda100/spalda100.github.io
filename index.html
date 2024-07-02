@@ -4,7 +4,7 @@
     <title>Main Page</title>
     <meta name="referrer" content="no-referrer-when-downgrade">
 
-    <script type='text/javascript'>
+ <script type='text/javascript'>
 !function(s) {
   let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
   o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
@@ -21,22 +21,22 @@
 </script>
 
 <script>
-// Define event listener
-const onKlaviyoSyncPerformLookup = (event) => {
-  console.log("onKlaviyoSync event data:", event.detail);
+// Define event listener for onIdentify
+const onIdentifyPerformLookup = (event) => {
+  console.log("onIdentify event data:", event.detail);
 
-  const kExchangeId = event.detail?.$exchange_id;
-  if (kExchangeId) {
-    console.log(event.detail?.$exchange_id);
-    // Add your custom logic here
+  if (event.detail?.idToken) {
+    console.log("ID Token:", event.detail.idToken);
+    // Add your custom logic here based on idToken
   }
 };
 
-// Set listener
+// Set listener for onIdentify event
 window._oirtrk = (window._oirtrk || []);
-const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
-addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
+const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])};
+addEventListenerToOir('onIdentify', onIdentifyPerformLookup);
 </script>
+
 
     <script
       async type="text/javascript"
