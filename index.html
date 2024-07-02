@@ -5,38 +5,31 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
 
     <script type='text/javascript'>
-    !function(s) {
-      let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-      o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
-      o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '65088EDE');
-      u.parentNode.insertBefore(o, u);
-    }(document);
-    </script>
-    
-    <script type='text/javascript'>
-    !function(e) {
-      let t = {  };
-      (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
-    }(window);
-    </script>
+!function(s) {
+  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+  o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '65088EDE');
+  u.parentNode.insertBefore(o, u);
+}(document);
+</script>
 
-    <script>
-    // Define event listener
-    const onKlaviyoSyncPerformLookup = (event) => {
-      console.log("onKlaviyoSync event data:", event.detail);
+<script>
+// Define event listener
+const onKlaviyoSyncPerformLookup = (event) => {
+  console.log("onKlaviyoSync event data:", event.detail);
 
-      const kExchangeId = event.detail?.$exchange_id;
-      if (kExchangeId) {
-        console.log(event.detail?.$exchange_id);
-        // Add your custom logic here
-      }
-    };
+  const kExchangeId = event.detail?.$exchange_id;
+  if (kExchangeId) {
+    console.log(event.detail?.$exchange_id);
+    // Add your custom logic here
+  }
+};
 
-    // Set listener
-    window._oirtrk = (window._oirtrk || []);
-    const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
-    addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
-    </script>
+// Set listener
+window._oirtrk = (window._oirtrk || []);
+const addEventListenerToOir = Array.isArray(window._oirtrk) ? window._oirtrk.addEventListener : (type, listener) => {window._oirtrk.push(['addEventListener', type, listener])}
+addEventListenerToOir('onKlaviyoSync', onKlaviyoSyncPerformLookup);
+</script>
 
     <script
       async type="text/javascript"
