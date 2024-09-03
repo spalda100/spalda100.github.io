@@ -63,24 +63,30 @@
 
         if (addToCartButton) {
           addToCartButton.addEventListener('click', function () {
-            // Check if Sendlane is available
-            if (window._Sendlane && Array.isArray(window._Sendlane)) {
-              // Push the 'added_to_cart' event
-              window._Sendlane.push({
-                event: 'added_to_cart',
-                line_items: [
-                  {
-                    product_id: 12345, // Replace with dynamic product ID if available
-                  }
-                ],
-              });
+            // Function to push the event
+            function pushToSendlane() {
+              if (window._Sendlane && Array.isArray(window._Sendlane)) {
+                // Push the 'added_to_cart' event
+                window._Sendlane.push({
+                  event: 'added_to_cart',
+                  line_items: [
+                    {
+                      product_id: 12345, // Replace with dynamic product ID if available
+                    }
+                  ],
+                });
 
-              // Debugging logs
-              console.log('Add to Cart clicked. Sendlane event triggered.');
-              console.log(window._Sendlane);
-            } else {
-              console.error('Sendlane is not defined.');
+                // Debugging logs
+                console.log('Add to Cart clicked. Sendlane event triggered.');
+                console.log(window._Sendlane);
+              } else {
+                console.error('Sendlane is not defined. Retrying in 500ms...');
+                setTimeout(pushToSendlane, 500); // Retry the event after 500ms
+              }
             }
+
+            // Call the function to push the event
+            pushToSendlane();
           });
         } else {
           console.error('Add to Cart button not found.');
