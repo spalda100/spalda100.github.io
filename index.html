@@ -4,34 +4,37 @@
     <title>Main Page</title>
     <meta name="referrer" content="no-referrer-when-downgrade">
 
-<script type='text/javascript'>
-!function(s) {
-  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-  o.src = 'https://cdn.aggle.net/oir/oir.min.js';
-  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', 'F943BCD2');
-  u.parentNode.insertBefore(o, u);
-}(document);
-</script>
-<script type='text/javascript'>
-!function(e) {
-  let t = {  };
-  (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
-}(window);
-</script>
+    <!-- OIR Tracking -->
+    <script type='text/javascript'>
+    !function(s) {
+      let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+      o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+      o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '66541FED');
+      u.parentNode.insertBefore(o, u);
+    }(document);
+    </script>
+    <script type='text/javascript'>
+    !function(e) {
+      let t = {  };
+      (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+    }(window);
+    </script>
 
-<script src="https://d18eg7dreypte5.cloudfront.net/browse-abandonment/v2/generic.js" async></script>
-<script type='text/javascript'>
-!function(e) {
-  (e.wtba = e.wtba || []).push({
-    "type": "config",
-    "options": {
-        "platform": 4,
-        "store_id": "MbvngKgcHnB8YX2ZeC4qFNVR2gYsoyLoyIoYWXJq"
-    }
-});
-}(window);
-</script>
-    
+    <!-- Sendlane Script -->
+    <script src="https://sendlane.com/scripts/pusher.js" async data-token="617f71d6-fb42-4ffb-bb8f-3c69adf5f89d"></script>
+
+    <!-- Initialize Sendlane -->
+    <script>
+    window._Sendlane = window._Sendlane || [];
+    </script>
+
+    <!-- Event ID Push (One-time setup) -->
+    <script>
+    _Sendlane.push({
+        event_id: 'LzeVFt4COdDGg'
+    });
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16588078378"></script>
     <script>
@@ -49,5 +52,40 @@
 
     <!-- Button to open PRODUCT.HTML page -->
     <button onclick="window.location.href = 'https://spalda100.github.io/PRODUCT.HTML'">Open Product Page</button>
+
+    <!-- Add to Cart Button -->
+    <button id="add-to-cart-btn">Add to Cart</button>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find the "Add to Cart" button
+        const addToCartButton = document.getElementById('add-to-cart-btn');
+
+        if (addToCartButton) {
+          addToCartButton.addEventListener('click', function () {
+            // Check if Sendlane is available
+            if (window._Sendlane && Array.isArray(window._Sendlane)) {
+              // Push the 'added_to_cart' event
+              window._Sendlane.push({
+                event: 'added_to_cart',
+                line_items: [
+                  {
+                    product_id: 12345, // Replace with dynamic product ID if available
+                  }
+                ],
+              });
+
+              // Debugging logs
+              console.log('Add to Cart clicked. Sendlane event triggered.');
+              console.log(window._Sendlane);
+            } else {
+              console.error('Sendlane is not defined.');
+            }
+          });
+        } else {
+          console.error('Add to Cart button not found.');
+        }
+      });
+    </script>
 </body>
 </html>
