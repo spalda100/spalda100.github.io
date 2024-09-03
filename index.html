@@ -56,20 +56,6 @@
     <!-- Add to Cart Button -->
     <button id="add-to-cart-btn">Add to Cart</button>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Function to wait for Sendlane to be defined
-        function waitForSendlane(callback) {
-          if (window._Sendlane && Array.isArray(window._Sendlane)) {
-            callback();
-          } else {
-            console.error('Sendlane is not defined yet. Retrying in 500ms...');
-            setTimeout(function() {
-              waitForSendlane(callback);
-            }, 500);
-          }
-        }
-
 <script>
 // Add to Cart button click handler
 const addToCartButton = document.getElementById('add-to-cart-btn');
