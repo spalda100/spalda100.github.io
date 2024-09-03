@@ -58,35 +58,37 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Find the "Add to Cart" button
-        const addToCartButton = document.getElementById('add-to-cart-btn');
+        // Function to wait for Sendlane to be defined
+        function waitForSendlane(callback) {
+          if (window._Sendlane && Array.isArray(window._Sendlane)) {
+            callback();
+          } else {
+            console.error('Sendlane is not defined yet. Retrying in 500ms...');
+            setTimeout(function() {
+              waitForSendlane(callback);
+            }, 500);
+          }
+        }
 
+        // Add to Cart button click handler
+        const addToCartButton = document.getElementById('add-to-cart-btn');
         if (addToCartButton) {
           addToCartButton.addEventListener('click', function () {
-            // Function to push the event
-            function pushToSendlane() {
-              if (window._Sendlane && Array.isArray(window._Sendlane)) {
-                // Push the 'added_to_cart' event
-                window._Sendlane.push({
-                  event: 'added_to_cart',
-                  line_items: [
-                    {
-                      product_id: 12345, // Replace with dynamic product ID if available
-                    }
-                  ],
-                });
+            waitForSendlane(function() {
+              // Push the 'added_to_cart' event once Sendlane is ready
+              window._Sendlane.push({
+                event: 'added_to_cart',
+                line_items: [
+                  {
+                    product_id: 12345, // Replace with dynamic product ID if available
+                  }
+                ],
+              });
 
-                // Debugging logs
-                console.log('Add to Cart clicked. Sendlane event triggered.');
-                console.log(window._Sendlane);
-              } else {
-                console.error('Sendlane is not defined. Retrying in 500ms...');
-                setTimeout(pushToSendlane, 500); // Retry the event after 500ms
-              }
-            }
-
-            // Call the function to push the event
-            pushToSendlane();
+              // Debugging logs
+              console.log('Add to Cart clicked. Sendlane event triggered.');
+              console.log(window._Sendlane);
+            });
           });
         } else {
           console.error('Add to Cart button not found.');
