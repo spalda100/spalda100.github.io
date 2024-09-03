@@ -70,30 +70,29 @@
           }
         }
 
-        // Add to Cart button click handler
-        const addToCartButton = document.getElementById('add-to-cart-btn');
-        if (addToCartButton) {
-          addToCartButton.addEventListener('click', function () {
-            waitForSendlane(function() {
-              // Push the 'added_to_cart' event once Sendlane is ready
-              window._Sendlane.push({
-                event: 'added_to_cart',
-                line_items: [
-                  {
-                    product_id: 12345, // Replace with dynamic product ID if available
-                  }
-                ],
-              });
-
-              // Debugging logs
-              console.log('Add to Cart clicked. Sendlane event triggered.');
-              console.log(window._Sendlane);
-            });
-          });
-        } else {
-          console.error('Add to Cart button not found.');
-        }
-      });
-    </script>
+<script>
+// Add to Cart button click handler
+const addToCartButton = document.getElementById('add-to-cart-btn');
+if (addToCartButton) {
+  addToCartButton.addEventListener('click', function () {
+    if (window._Sendlane) {
+      window._Sendlane.push({
+        event: 'added_to_cart',
+        line_items: [
+          {
+            product_id: 12345, // Replace with dynamic product ID if available
+          }
+        ],
+       });
+      // Debugging logs
+      console.log('Add to Cart clicked. Sendlane event triggered.');
+      console.log(window._Sendlane);
+   }
+  });
+} else {
+  console.error('Add to Cart button not found.');
+}
+</script>
+          
 </body>
 </html>
