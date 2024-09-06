@@ -6,8 +6,8 @@
 <script type='text/javascript'>
 !function(s) {
   let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-  o.src = 'https://cdn.aggle.net/oir/oir.min.js';
-  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', 'EE987932');
+  o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', '66541FED');
   u.parentNode.insertBefore(o, u);
 }(document);
 </script>
@@ -18,34 +18,27 @@
 }(window);
 </script>
 
-    <!-- Function to track purchase-aldin event -->
-    <script type='text/javascript'>
-        function trackPurchase() {
-            // Sample product data
-            let productData = {
-                product_id: "123456",
-                product_name: "Sample Product",
-                category: "Electronics",
-                price: 99.99,
-                currency: "USD",
-                quantity: 1,
-                custom_attributes: {
-                    custom_attribute1: "value1",
-                    custom_attribute2: "value2"
-                }
-            };
+    <script src="https://sendlane.com/scripts/pusher.js" async data-token="617f71d6-fb42-4ffb-bb8f-3c69adf5f89d"></script>
 
-            // Track the purchase-aldin event with product data
-            window._oirtrk = window._oirtrk || [];
-            window._oirtrk.push(['track', 'purchase-aldin', productData]);
-        }
-    </script>
-</head>
-<body>
-    <h1>Welcome to our Product Page</h1>
-    <p>This is where you can learn more about our products.</p>
+    <script>
+window._Sendlane = window._Sendlane || [];
+</script>
+<script src="https://sendlane.com/scripts/pusher.js" async></script>
+<script>
+_Sendlane.push({
+    event_id: 'LzeVFt4COdDGg'
+});
+</script>
 
-    <!-- Button to trigger purchase-aldin event -->
-    <button onclick="trackPurchase()">Purchase</button>
+<script>
+window._Sendlane = window._Sendlane || [];
+</script>
+
+<script>
+_Sendlane.push({
+    event_id: 'nUHEZnIHIK8wV'
+});
+</script>
+
 </body>
 </html>
