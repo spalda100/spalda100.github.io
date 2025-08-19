@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
-    <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
 
-<script type="text/javascript" src="https://aggle.net/js?pid=P74LN4N29" async></script>
+  <!-- External script -->
+  <script type="text/javascript" src="https://aggle.net/js?pid=P74LN4N29"></script>
 
-
+  <!-- Inline test script -->
+  <script>
+    console.log("✅ Page loaded, inline script is running.");
+    window.addEventListener("load", () => {
+      console.log("✅ Window fully loaded.");
+    });
+  </script>
 </head>
 <body>
+  <h1>Welcome to the Main Page</h1>
+  <p>If the script is working, you should see activity in the console.</p>
+  
+  <button onclick="alert('Button clicked!')">Test Button</button>
+
+  <noscript>
+    <p style="color: red;">⚠️ JavaScript is disabled in your browser.</p>
+  </noscript>
 </body>
 </html>
