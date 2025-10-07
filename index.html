@@ -6,75 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
 
-  <!-- External OIR script -->
+  <script type='text/javascript'>
+!function(s) {
+  let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
+  o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
+  o.async = !0, o.setAttribute('oirtyp', '6311ae17'), o.setAttribute('oirid', 'P9NDF48NM');
+  u.parentNode.insertBefore(o, u);
+}(document);
+</script>
+<script type='text/javascript'>
+!function(e) {
+  let t = {  };
+  (e._oirtrk = e._oirtrk || []).push(['track', 'on-site', t]);
+}(window);
+</script>
+
+  
+<script type="text/javascript" src="https://534017995.collect.igodigital.com/collect.js"> </script>
+
   <script type="text/javascript">
-    !function(s) {
-      let o = s.createElement('script'), u = s.getElementsByTagName('script')[0];
-      o.src = 'https://cdn.aggle.net/oir-dev/oir-dev.min.js';
-      o.async = true;
-      o.setAttribute('oirtyp', '6311ae17');
-      o.setAttribute('oirid', 'P9NDF48NM');
-      u.parentNode.insertBefore(o, u);
-    }(document);
-  </script>
+    _etmc.push(["setOrgId", "534017995"]); 
+    _etmc.push(["trackPageView"]); 
+</script>
 
-  <!-- OIR Tracking + Custom Listener -->
-  <script type="text/javascript">
-    (function(e) {
-      // Initialize global tracker
-      e._oirtrk = e._oirtrk || [];
-
-      // Define event listener
-      var onIdentifyPerformLookup = function(event) {
-        console.log("onIdentify event data:", event.detail);
-
-        if (event.detail && event.detail.idToken) {
-          if (event.detail.idToken !== 'anonymous') {
-            fetch(`https://hooks.zapier.com/hooks/catch/19634044/u9g1ecq/?public_id=C9PCC5CFC&token=${event.detail.idToken}`, {
-              method: "GET"
-            })
-            .then(response => {
-              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-              return response.text();
-            })
-            .then(data => {
-              console.log("Zapier webhook response:", data);
-            })
-            .catch(error => {
-              console.error("Error sending request:", error);
-            });
-          }
-        }
-
-        // Optional: Sync block (only once, not duplicating "on-site")
-        var t = { 
-          userId: 'customUserId-123',  
-          eventName: 'Id-Sync',
-          otherInfo: '...'
-        };
-        e._oirtrk.push(['track', 'custom-sync', t]);
-      };
-
-      // Add event listener safely
-      var addEventListenerToOir;
-      if (Array.isArray(e._oirtrk)) {
-        addEventListenerToOir = function(type, listener) {
-          e._oirtrk.push(['addEventListener', type, listener]);
-        };
-      } else {
-        addEventListenerToOir = e._oirtrk.addEventListener;
-      }
-
-      addEventListenerToOir('onIdentify', onIdentifyPerformLookup);
-
-      // Default on-site tracking (only once)
-      e._oirtrk.push(['track', 'on-site', {}]);
-
-    })(window);
-  </script>
-
-  <!-- Klaviyo -->
-  <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/T9Mx6p/klaviyo.js"></script>
 
   <!-- Inline test script -->
   <script>
